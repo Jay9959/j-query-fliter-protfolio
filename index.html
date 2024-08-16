@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fliter protfoli</title>
+    <!-- BT  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!-- MAIN CSS  -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+
+    <div id="portfolio" class="portfolio">
+        <div class="container offset-top-bot">
+            <div class="text-center">
+                <div class="buttons">
+                    <button id="all" class="active">All</button>
+                    <button id="graphic">Graphic</button>
+                    <button id="photography">Photography</button>
+                    <button id="wordpress">Wordpress</button>
+                    <button id="printing">Printing</button>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="my-portfolio">
+                <div class="col-md-4 col-sm-6 item-portfolio all wordpress">
+                    <div class="box">
+                        <img class="img-portfolio"
+                            src="images/1.jpeg"
+                            alt="portfolio 1" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item-portfolio all photography">
+                    <div class="box">
+                        <img class="img-portfolio"
+                            src="images/2.jpeg"
+                            alt="portfolio 2" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item-portfolio all wordpress">
+                    <div class="box">
+                        <img class="img-portfolio"
+                            src="images/a.jpg"
+                            alt="portfolio 3" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item-portfolio all printing">
+                    <div class="box">
+                        <img class="img-portfolio"
+                            src="images/b.jpg"
+                            alt="portfolio 4" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item-portfolio all wordpress">
+                    <div class="box">
+                        <img class="img-portfolio"
+                            src="images/c.jpg"
+                            alt="portfolio 5" />
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 item-portfolio all graphic">
+                    <div class="box">
+                        <img class="img-portfolio"
+                            src="images/d.jpg"
+                            alt="portfolio 6" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jq -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        var hides = "all";
+        $('.buttons button').click(function () {
+            var include = $(this).attr("id");
+            $("." + hides).slideUp();
+            setTimeout(function () {
+                $("." + include).slideDown()
+            }, 500)
+            hides = include;
+        });
+
+        $(".buttons button").on("click", function () {
+            $(".buttons").find(".active").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+</body>
+
+</html>
